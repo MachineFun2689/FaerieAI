@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Faerie - Chat</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">Faerie</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="subscriptions.html">Subscriptions</a></li>
+          <li><a href="erik.html">Chat</a></li>
+          <br>
+        </ul>
+      </nav>
+    </header>
+    <div id="chatSidemenu" class="sidemenu">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">Past Chats</a>
+    </div>
+
+    <div id="chatClosed" class="sidemenuclosed">
+      <span onclick="openNav()" id="opensidemenubutton">&#9776</span>
+    </div>
+
+    <script>
+      function openNav() {
+      document.getElementById("chatSidemenu").style.width = "20%";
+      document.getElementById("chatClosed").style.width = "0";
+      document.getElementBYId("opensidemenubutton").style.display = "none";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+      document.getElementById("chatSidemenu").style.width = "0";
+      document.getElementById("chatClosed").style.width = "5%";
+      document.getElementBYId("opensidemenubutton").style.display = "block"
+    }
+    </script>
+   <div id="main">
+    <br>
+    <div id="talking">
+      <div class="chat">
+        <p>Hi! I am Erik. I am a friendly chatbot and you can ask me anything. Some common uses of me are playing D&D (fun fact: I was originally created as a Dungeon Master), talking to, doing your homework, and analyzing text.</p>
+        <br>
+        <p>What do you want to ask me?</p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form id="playersubmit">
+        <ul class="userinput">
+          <input id="textsubmit" type="text" class="text" placeholder="What would you like to say?">
+          <input type="button" class="submit" value=">" onclick="getTextOutput()">
+        </ul>
+        <script>
+          function addAITextBubble() {
+            const aiBubble = document.createElement('div');
+            aiBubble.className = "chat";
+            const aiSpeech = 'Why?'; 
+            const aiText = document.createTextNode(aiSpeech);
+            aiBubble.appendChild(aiText);
+            const element = document.getElementById("talking");
+            element.appendChild(aiBubble);
+          }
+          
+          function getTextOutput() {
+            let inputTextElement = document.getElementById("textsubmit");
+            const messageText = inputTextElement.value.trim();
+
+            if (messageText === '') return; 
+
+            const para = document.createElement('div');
+            para.className = "player";
+            const node = document.createTextNode(messageText);
+            para.appendChild(node);
+            const element = document.getElementById("talking");
+            element.appendChild(para);
+            
+            inputTextElement.value = ''; 
+            
+            addAITextBubble();
+          }
+
+          const textInput = document.getElementById("textsubmit");
+
+          textInput.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+              event.preventDefault(); 
+              getTextOutput();
+            }
+          });
+        </script>
+      </form>
+   </div>
+  </body>
+</html>

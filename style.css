@@ -1,0 +1,437 @@
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Color Variables for easy theme management */
+:root {
+  --primary-bg: #000000;
+  --secondary-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --accent-color: #67e04c; /* Green */
+  --card-bg: #1e1e1e;
+  --lightgreen: #67e04c;
+  --darkgreen: #0e5100;
+  --darkteal: #004c51;
+  --lightteal: #4ccfeo;
+  --lightblue: #4c5eeo;
+  --darkblue: #000751;
+  --darkpink: #51002a;
+  --lightpink: #df4ca3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: --accent-color; /* Lighter green for hover */
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+  background-color:  var(--secondary-bg);
+  background-image: url("Gradient.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-bottom: 2px solid var(--accent-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%
+}
+
+.sidemenuclosed span {
+  width: 85%;
+  aspect-ratio: 1/1;
+  margin: auto;
+}
+
+.sidemenuclosed {
+  height: 90%;
+  width: 5%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  color: black;
+  overflow-x: hidden;
+  padding-top: 1rem;
+  padding: 2%;
+  transition: 0.5s;
+}
+
+
+.sidemenu {
+  height: 90%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  background-color: white; /* white*/
+  border-right-color: gray;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 1rem; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidemenu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidemenu a:hover {
+  color: gray;
+}
+
+/* Position and style the close button (top right corner) */
+.sidemenu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  margin-left: 5%;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidemenu {padding-top: 15px;}
+  .sidemenu a {font-size: 18px;}
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  font-family: 'Playfair Display', serif;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li a {
+  margin-left: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+main {
+  padding: 2rem 5%;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+h1, h2, h3 {
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--accent-color);
+}
+
+
+
+.headbackground {
+  background: var(--gradient)
+}
+
+h2 {
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+#hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: url('picsum.photos') no-repeat center center/cover; /* Placeholder image */
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  background-blend-mode: overlay;
+  padding: 5rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.cta-button {
+  background-color: var(--accent-color);
+  color: var(--primary-bg);
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  background-image: url("Gradient.png");
+  background-repeat: no-repeat;
+}
+
+.cta-button:hover {
+  background-color: --accent-color;
+  color: var(--primary-bg);
+}
+
+.service-cards {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  border: 1px solid var(--secondary-bg);
+}
+
+.card h3 {
+  color: var(--accent-color);
+}
+
+.chat {
+  background-image: url(Gradient.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.player {
+  background-color: white;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  border-radius: 8px;
+  flex: 1;
+  color: black;
+}
+
+.userinput {
+  background-color: white;
+  background-image: url(Gradient.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0.5rem;
+  margin: 1.5rem;
+  position: fixed;
+  width: 86.5%;
+  bottom: 20px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.userinput .text {
+  border-color: #030303;
+  border-radius: 5px;
+  background-color: black;
+  height: 1.7rem;
+  width: 92%;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  padding: 6px;
+}
+
+.userinput .submit {
+  background-color: black;
+  border-radius: 5px;
+  height: 1.7rem;
+  right: 2%;
+  position: absolute;
+  width: 5%;
+  color: white;
+  border-color: black;
+  font-weight: bolder;
+}
+
+.sub {
+  text-decoration: none;
+  font-size: 300%;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-left: 3.5%;
+}
+
+.plans {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%
+}
+
+.subscription {
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: black;
+}
+
+.subborder {
+  border-radius: 10px;
+  background-image: url(Gradient.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 2.5px;
+  float: left;
+  margin: 1%;
+  width: 23%;
+}
+
+.subscription .description ul {
+  margin: 10%;
+  list-style: disc;
+}
+
+.compareplans {
+  border-radius: 10px;
+  background-image: url(Gradient.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 1.5%;
+  margin: 2.5%;
+  width: 90%;
+  gap: 1.25%;
+  display: grid;
+  grid-template-columns: 15fr 20fr 20fr 20fr 20fr;
+  grid-template-rows: auto auto auto auto auto auto auto auto;
+}
+
+.compareplans .griditem {
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: black;
+}
+
+details {
+  background-image: url(Gradient.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  padding: 18px;
+  width: 90%;
+  font-weight: normal;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 2.5%;
+  border-radius: 0;
+}
+
+details > p {
+  padding: 0;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  width: 90%;
+  padding: 1.5%;
+}
+
+summary {
+  list-style: none;
+}
+
+summary::before {
+  content: '\02795'; 
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+details[open] > summary::before {
+  content: '\2796'; 
+  transform: rotate(0deg);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--secondary-bg);
+  border-top: 1px solid var(--card-bg);
+  font-size: 0.8rem;
+  bottom: 0;
+  background-image: url("Gradient.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.section-title {
+  color: forestgreen;
+  font-size: 2em; 
+  text-align: center; 
+  margin-top: 20px; 
+  margin-bottom: 10px; 
+}
+
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+main {
+  padding: 20px;
+}
